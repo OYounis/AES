@@ -15,4 +15,11 @@ interface aes_if;
         forever #10 clk = ~clk;
     end
 
+    task assign_transaction(transaction transaction_h);
+        opcode_i     = transaction_h.opcode_i;
+        start_i      = transaction_h.start_i;
+        key_i        = transaction_h.key_i;
+        r_con_i      = transaction_h.r_con_i;
+        plain_text_i = transaction_h.plain_text_i;
+    endtask
 endinterface

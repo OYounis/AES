@@ -1,5 +1,6 @@
 class generator;
-mailbox drv_mbx;
+milbaox gen_mbx;
+event transaction_done;
 
 task run();
 repeat(20)begin
@@ -8,6 +9,7 @@ repeat(20)begin
         $display("randomization failed");
     else 
         drv_mbx.put(transaction_h);
+        @(transaction_done);
 end
 endtask
 endclass
